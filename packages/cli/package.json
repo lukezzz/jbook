@@ -1,13 +1,21 @@
 {
-  "name": "cli",
+  "name": "jsnote-luk",
   "version": "1.0.0",
   "license": "MIT",
+  "bin": "dist/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "start": "tsc --watch --preserveWatchOutput"
+    "start": "tsc --watch --preserveWatchOutput",
+    "prepublishOnly": "tsc"
   },
   "dependencies": {
     "commander": "^8.1.0",
-    "local-api": "^1.0.0"
+    "@jsnote-luk/local-api": "^1.0.0"
   },
   "devDependencies": {
     "@types/node": "^16.7.1",

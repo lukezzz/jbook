@@ -53,6 +53,7 @@ export const createCellsRouter = (filename: string, dir: string) => {
         const { cells }: { cells: Cell[] } = req.body
 
         // write the cells into the file
+        console.log(fullPath)
         await fs.writeFile(fullPath, JSON.stringify(cells), 'utf-8')
 
         res.send({ status: 'OK' })

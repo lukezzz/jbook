@@ -1,0 +1,1 @@
+[{"content":"333123jsldjflkjljskldjkf","type":"text","id":"dyaql"},{"content":"test","type":"text","id":"af7l4"},{"content":"const onclick = () => show(123);\n\nshow(<button onClick={onclick}>test</button>);","type":"code","id":"x5wr4"}]

@@ -81,9 +81,9 @@ var createCellsRouter = function (filename, dir) {
                 case 0:
                     cells = req.body.cells;
                     // write the cells into the file
+                    console.log(fullPath);
                     return [4 /*yield*/, promises_1.default.writeFile(fullPath, JSON.stringify(cells), 'utf-8')];
                 case 1:
-                    // write the cells into the file
                     _a.sent();
                     res.send({ status: 'OK' });
                     return [2 /*return*/];

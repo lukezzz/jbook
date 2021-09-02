@@ -10,6 +10,7 @@ export const serve = (port: number, filename: string, dir: string, useProxy: boo
     // console.log('that file is in dir', dir)
     const app = express()
 
+    app.use(createCellsRouter(filename, dir))
 
     if (useProxy) {
         app.use(createProxyMiddleware({
@@ -19,11 +20,10 @@ export const serve = (port: number, filename: string, dir: string, useProxy: boo
         }))
 
     } else {
-        const packagePath = require.resolve('local-client/build/index.html')
+        const packagePath = require.resolve('@jsnote-luk/local-client/build/index.html')
         console.log(packagePath)
         app.use(express.static(path.dirname(packagePath)))
     }
-    app.use(createCellsRouter(filename, dir))
 
     return new Promise<void>((resolve, reject) => {
         app.listen(port, resolve).on('error', reject)
