@@ -11,14 +11,16 @@
   ],
   "scripts": {
     "start": "tsc --watch --preserveWatchOutput",
-    "prepublishOnly": "tsc"
+    "prepublishOnly": "esbuild src/index.ts --platform=node --outfile=dist/index.js --bundle --minify --define:process.env.NODE_ENV=\\\"prodcution\\\""
   },
   "dependencies": {
-    "commander": "^8.1.0",
-    "@jsnote-luk/local-api": "^1.0.0"
+    "@jsnote-luk/local-client": "^1.0.0"
   },
   "devDependencies": {
+    "@jsnote-luk/local-api": "^1.0.0",
+    "commander": "^8.1.0",
     "@types/node": "^16.7.1",
+    "esbuild": "0.8.26",
     "typescript": "^4.3.5"
   }
 }
